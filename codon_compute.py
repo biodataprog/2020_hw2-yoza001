@@ -35,6 +35,7 @@ with gzip.open(file1,"rt") as fh:
     with gzip.open(file1,"rt") as fh:
     seqs = aspairs(fh)
 
+    #solution for subquestion1 (gives error)
         data=file1.read()
         print (data)
 
