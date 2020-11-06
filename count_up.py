@@ -53,3 +53,5 @@ with gzip.open(gff,"rt") as fh:
 
 print("There are %s genes on the (+) strand"%(strand_count['w']))
 print("There are %s genes on the (-) strand"%(strand_count['c']))
+
+
