@@ -34,8 +34,22 @@ if not os.path.exists(fasta):
     
 with gzip.open(gff,"rt") as fh:
     # now add code to process this
-    gff = csv.reader(fh,delimiter="\t")
-    for row in gff:
-        if row[0].startswith("#"):
-            continue
-        print(row[3],row[6])
+    
+     seqs = dict(aspairs(fh))
+        first_codon = {}
+        last_codon = {}
+        sequence_count = {}
+        strand_count = {}
+        i = 0
+
+        for seqname in seqs:
+
+                last_char = seqname[-1]
+
+                if last_char in strand_count:
+                        strand_count[last_char] += 1
+                else :
+                        strand_count[last_char] = 1
+
+print("There are %s genes on the (+) strand"%(strand_count['w']))
+print("There are %s genes on the (-) strand"%(strand_count['c']))
