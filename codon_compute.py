@@ -31,8 +31,15 @@ if not os.path.exists(file2):
 
 with gzip.open(file1,"rt") as fh:
     seqs = aspairs(fh)
+    
+    with gzip.open(file1,"rt") as fh:
+    seqs = aspairs(fh)
 
-    for seq in seqs:
-        seqname  = seq[0]
-        seqstring= seq[1]
-        print(seqname, " first 10 bases are ", seqstring[0:10])
+        data=file1.read()
+        print (data)
+
+
+   # for seq in seqs:
+    #    seqname  = seq[0]
+     #   seqstring= seq[1]
+      #  print(seqname, " first 10 bases are ", seqstring[0:10])
