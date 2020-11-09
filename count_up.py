@@ -46,21 +46,21 @@ with gzip.open(fasta,"rt") as f:
         #nucleotide would be read as a separate entry?
               #my code:
               from Bio.Seq import Seq
-        seq = dict(aspairs(f))
-        seq.values() > 'theseq.txt'
-        my_seq = Seq(theseq.txt) # considering that seq.values() are output in theseq.txt and within this txt file, all nucelotides are separate entities
-        #print(my_seq)
-       def split_str(my_seq, chunk, skip_tail=False):
-           lst = []
-           if chunk <= len(my_seq):
-               lst.extend([my_seq[:chunk]])
-               lst.extend(split_str(my_seq[chunk:], chunk, skip_tail))
-           elif not skip_tail and my_seq:
-               lst.extend([my_seq])
-           return lst
+                    seq = dict(aspairs(f))
+                    seq.values() > 'theseq.txt'
+                    my_seq = Seq(theseq.txt) # considering that seq.values() are output in theseq.txt and within this txt file, all nucelotides are separate entities
+                    #print(my_seq)
+                 def split_str(my_seq, chunk, skip_tail=False):
+                   lst = []
+                     if chunk <= len(my_seq):
+                         lst.extend([my_seq[:chunk]])
+                         lst.extend(split_str(my_seq[chunk:], chunk, skip_tail))
+                     elif not skip_tail and my_seq:
+                         lst.extend([my_seq])
+                     return lst
 
-       #print(split_str(my_seq, 3))
-              print(my_seq.count("ATG")) # answer part 2
+                        #print(split_str(my_seq, 3))
+                         print(my_seq.count("ATG")) # answer part 2
   
         #another way I was thinking - if I can translate the seq and get peptide seq,
         #I can find the number of Methionines and thus find all start sites for M
