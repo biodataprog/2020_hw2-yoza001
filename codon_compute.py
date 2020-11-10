@@ -31,8 +31,23 @@ if not os.path.exists(file2):
 
 with gzip.open(file1,"rt") as fh:
     seqs = aspairs(fh)
+    
+    with gzip.open(file1,"rt") as fh:
+    seqs = aspairs(fh)
 
-    for seq in seqs:
-        seqname  = seq[0]
-        seqstring= seq[1]
-        print(seqname, " first 10 bases are ", seqstring[0:10])
+       # for seq in seqs:
+        #    seqname  = seq[0]
+         #   seqstring= seq[1]
+            # print(seqname, " first 10 bases are ", seqstring[0:10])
+            
+    #part 1
+    gene_count = {}
+    i = 0
+    for seqname in seqs: 
+        last_char = seqname[-1]
+        if last_char in gene_count:
+            gene_count[last_char] += 1
+        else:
+            gene_count[last_char] = 1
+            
+print(" There are %s genes in "%(gene_count[]), filename=file1)            
